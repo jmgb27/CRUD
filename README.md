@@ -1,4 +1,4 @@
-# React Snowpack Boilerplate + Tailwind CSS + TypeScript
+# CRUD MERN Application + MongoDB
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
