@@ -4,6 +4,7 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const userModel = require("./src/models/userModel.ts");
 const cors = require("cors");
 
 app.use(cors());
@@ -19,7 +20,10 @@ app.use(bodyParser.json());
 app.post("/api/create", async (req, res) => {
     const record = req.body;
     console.log(record);
-    res.json({ status: "ok" });
+
+    const response = await userModel.create(record);
+
+    console.log(response);
 });
 
 app.listen(1337, () => {

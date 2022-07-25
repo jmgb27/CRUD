@@ -3,13 +3,13 @@ import React, { useState, useEffect } from "react";
 function App() {
     const [name, setName] = useState("");
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         console.log(name);
 
-        fetch("http://localhost:1337/api/create", {
+        await fetch("http://localhost:1337/api/create", {
             method: "POST",
-            body: JSON.stringify({ name: name }),
+            body: JSON.stringify({ record: name }),
             headers: {
                 "Content-Type": "application/json",
             },
